@@ -35,25 +35,24 @@ class Main {
     static void meny(ArrayList<Plant> plants) {
         String input = JOptionPane.showInputDialog("Vilken växt ska få vatten?");
         if (input == null || input.isEmpty()) {
-            System.out.println("Input får inte vara tomt");
+            JOptionPane.showMessageDialog(null, "Input får inte vara tom");
             return;
         }
         input = input.trim();
         input = input.toLowerCase();// Jämför båda med toLowerCase()
         for  (Plant plant : plants) {
             if( input.equals(plant.getName().toLowerCase()) ) {
-                System.out.println(plant.waterInstructions());
+                JOptionPane.showMessageDialog(null,plant.waterInstructions());
                 return;
             }
         }
         // om inte match, skriv meddelande
-        System.out.println("Felaktig inmatning matchade inte: " + input );
-        System.out.println("Plantor att välja på:");
+        String message = "Felaktig inmatning matchade inte: " + input +"\n"
+            + "Plantor att välja på:";
+
         for  (Plant plant : plants) {
-            System.out.println(plant.getName());
+            message += "\n" + plant.getName();
         }
-
+        JOptionPane.showMessageDialog(null,message);
     }
-
-
 }
