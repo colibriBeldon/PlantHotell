@@ -33,7 +33,7 @@ class Main {
     }
 
     static void meny(ArrayList<Plant> plants) {
-        String input = JOptionPane.showInputDialog("Vilken text ska få vatten?");
+        String input = JOptionPane.showInputDialog("Vilken växt ska få vatten?");
         if (input == null || input.isEmpty()) {
             System.out.println("Input får inte vara tomt");
             return;
