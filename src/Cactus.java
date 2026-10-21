@@ -1,5 +1,5 @@
 public class Cactus extends Plant{ // arv från Plant
-
+    static final double BASE_VOLUME = 0.02;
     //Constructor
     public Cactus(String name, double height, WaterType waterType) {
         super(name, height, waterType);
@@ -7,7 +7,7 @@ public class Cactus extends Plant{ // arv från Plant
     //Abstracts
     @Override
     public double waterAmount() {// 2cl
-        return 0.02;
+        return BASE_VOLUME;
     }
     // Polymorphism
     @Override
